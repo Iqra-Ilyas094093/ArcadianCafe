@@ -1,3 +1,4 @@
+import 'package:arcadein_cafe/view/screens/dish_details_screen/dish_details_screen.dart';
 import 'package:arcadein_cafe/view/screens/screens.dart';
 import 'package:flutter/material.dart';
 
