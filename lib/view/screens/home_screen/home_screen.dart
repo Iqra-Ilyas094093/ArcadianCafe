@@ -2,6 +2,7 @@ import 'package:arcadein_cafe/utils/banners.dart';
 import 'package:arcadein_cafe/utils/categories.dart';
 import 'package:arcadein_cafe/utils/colors.dart';
 import 'package:arcadein_cafe/utils/text_styles.dart';
+import 'package:arcadein_cafe/view/screens/seat_reservation/seat_reservation_screen.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -29,6 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: AppColors.darkBrown,
         title: Text('Arcadian Cafe', style: AppTextStyles.appBarTitle),
         actions: [
@@ -229,14 +231,19 @@ class _HomeScreenState extends State<HomeScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Container(
-                  height: 60,
-                  width: 160,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadiusGeometry.circular(80),
-                    color: AppColors.darkBrown,
+                GestureDetector(
+                  onTap: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>SeatReservationScreen()));
+                  },
+                  child: Container(
+                    height: 60,
+                    width: 160,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadiusGeometry.circular(80),
+                      color: AppColors.darkBrown,
+                    ),
+                    child: Center(child: Text('Seat\n Reservation',style: AppTextStyles.buttonText,textAlign: TextAlign.center,)),
                   ),
-                  child: Center(child: Text('Seat\n Reservation',style: AppTextStyles.buttonText,textAlign: TextAlign.center,)),
                 ),
                 Container(
                   height: 60,

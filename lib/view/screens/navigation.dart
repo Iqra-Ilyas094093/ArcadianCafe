@@ -19,7 +19,7 @@ class _NavigationState extends State<Navigation> {
     HomeScreen(),
     MenuScreen(),
     Cart(),
-    Profile(),
+    ProfileScreen(),
   ];
    int selectedIndex = 0;
 

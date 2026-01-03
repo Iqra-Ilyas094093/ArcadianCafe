@@ -34,9 +34,6 @@ void showOrderPlacedDialog(BuildContext context) {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(backgroundColor: AppColors.darkBrown),
               onPressed: () {
-                Navigator.pop(context); // close dialog
-
-                // Navigate back to Home
                 Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>Navigation()));
               },
               child: Text(

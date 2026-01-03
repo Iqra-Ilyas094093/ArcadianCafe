@@ -13,6 +13,7 @@ class Cart extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: AppColors.darkBrown,
         centerTitle: true,
         elevation: 0,
@@ -27,22 +28,28 @@ class Cart extends StatelessWidget {
                 CartItemCard(),
                 CartItemCard(),
                 CartItemCard(),
+                CartItemCard(),
+                CartItemCard(),
+                CartItemCard(),
               ],
             ),),
           ),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(backgroundColor: AppColors.darkBrown),
-            onPressed: () {
-              showModalBottomSheet(
-                context: context,
-                isScrollControlled: true,
-                backgroundColor: Colors.transparent,
-                builder: (_) => const CheckoutBottomSheet(),
-              );
-            },
-            child: Text(
-              'Proceed to Checkout',
-              style: AppTextStyles.buttonText,
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(backgroundColor: AppColors.darkBrown),
+              onPressed: () {
+                showModalBottomSheet(
+                  context: context,
+                  isScrollControlled: true,
+                  backgroundColor: Colors.transparent,
+                  builder: (_) => const CheckoutBottomSheet(),
+                );
+              },
+              child: Text(
+                'Proceed to Checkout',
+                style: AppTextStyles.buttonText,
+              ),
             ),
           ),
 
